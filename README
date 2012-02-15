@@ -78,7 +78,7 @@ Vi sarà chiesta la vostra password privata e il download sarà completato.
 Dalla console
 cd tpi1-nat-exercise
 git remote add origin git://github.com/StefanoSalsano/tpi1-nat-exercise.git
-git fetch upstream
+git fetch origin
 
 ....) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, SEGNALIAMO I FILE MODIFICATI
 
