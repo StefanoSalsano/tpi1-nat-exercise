@@ -57,30 +57,22 @@ git config --global user.email "indirizzo@email.com"
 
 In entrambi i casi non riceverete alcun messaggio di conferma.
 
-11) Per "clonare" in locale l'esercizio NAT di TPI 2011/2012, bisogna selezionare Fork da questo link:
-https://github.com/StefanoSalsano/tpi1-nat-exercise
-(in alto a destra)
-
-GitHub eseguirà alcune operazioni online, cui farà seguito l'incremento del numero di Fork in alto a destra.
-
-Ma questo solo sul web!
-
-12) Per importare sul proprio PC un progetto eseguire il comando
+11) Per importare sul proprio PC un progetto eseguire il comando
 
 git clone git@github.com:StefanoSalsano/tpi1-nat-exercise.git
 
 Vi sarà chiesta la vostra password privata e il download sarà completato.
 
-13) Sarà creata una cartella locale nella directory User (Windows 7) e C:\Documents And Settings\UTENTE (Windows XP)
+12) Sarà creata una cartella locale nella directory User (Windows 7) e C:\Documents And Settings\UTENTE (Windows XP)
 
-14) Bisogna configurare remote e upstream all'interno della cartella locale per consentirvi di modificare/pubblicare (push) e scaricare/richiedere (pull) eventuali aggiornamenti
+13) Bisogna configurare remote e upstream all'interno della cartella locale per consentirvi di modificare/pubblicare (push) e scaricare/richiedere (pull) eventuali aggiornamenti
 
 Dalla console
 cd tpi1-nat-exercise
 git remote add origin git://github.com/StefanoSalsano/tpi1-nat-exercise.git
 git fetch origin
 
-....) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, SEGNALIAMO I FILE MODIFICATI
+14) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, SEGNALIAMO I FILE MODIFICATI
 
 git add README
 git commit -m 'first commit'
