@@ -67,7 +67,7 @@ Ma questo solo sul web!
 
 12) Per importare sul proprio PC un progetto eseguire il comando
 
-git clone git@github.com:USERNAME/tpi1-nat-exercise.git
+git clone git@github.com:StefanoSalsano/tpi1-nat-exercise.git
 
 Vi sarà chiesta la vostra password privata e il download sarà completato.
 
@@ -77,7 +77,7 @@ Vi sarà chiesta la vostra password privata e il download sarà completato.
 
 Dalla console
 cd tpi1-nat-exercise
-git remote add upstream git://github.com/StefanoSalsano/tpi1-nat-exercise.git
+git remote add origin git://github.com/StefanoSalsano/tpi1-nat-exercise.git
 git fetch upstream
 
 ....) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, SEGNALIAMO I FILE MODIFICATI
