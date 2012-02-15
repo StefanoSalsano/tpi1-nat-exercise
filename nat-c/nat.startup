@@ -1,0 +1,8 @@
+ip link set eth0 up
+ip link set eth1 up
+ip address add 192.168.1.1/24 dev eth0
+ip address add 10.0.1.1/24 dev eth1
+
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+iptables -t nat -A POSTROUTING -s 192.168.1.1/24 -j SNAT -p UDP --to 10.0.1.1:50000-60000
