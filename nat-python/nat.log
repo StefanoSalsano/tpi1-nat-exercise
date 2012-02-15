@@ -1,0 +1,32 @@
+Locating the bottom of the address space ... 0x10000
+Locating the top of the address space ... Checking that ptrace can change system call numbers...0xc0000000
+Core dump limits :
+	soft - 0
+	hard - NONE
+OK
+Checking syscall emulation patch for ptrace...0xc0000000
+Core dump limits :
+	soft - 0
+	hard - NONE
+OK
+Checking advanced syscall emulation patch for ptrace...0xc0000000
+Core dump limits :
+	soft - 0
+	hard - NONE
+OK
+0xc0000000
+Core dump limits :
+	soft - 0
+	hard - NONE
+Checking for tmpfs mount on /dev/shm...OK
+Checking PROT_EXEC mmap in /dev/shm/...OK
+Checking for the skas3 patch in the host:
+  - /proc/mm...not found: No such file or directory
+  - PTRACE_FAULTINFO...not found
+OK
+  - PTRACE_LDT...not found
+OK
+OK
+UML running in SKAS0 mode
+Adding 10186752 bytes to physical memory to account for exec-shield gap
+

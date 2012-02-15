@@ -1,0 +1,9 @@
+ip link set eth0 up 
+ip link set eth0 address 00:00:00:00:00:02 
+ip address add 192.168.1.101/24 dev eth0
+ip route add default via 192.168.1.1
+
+echo -n "Installing python support..."
+dpkg -i /root/python-support_1.0.6_all.deb > /dev/null
+echo "Done."
+

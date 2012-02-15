@@ -1,0 +1,10 @@
+ip link set eth1 up
+ip link set eth2 up
+ip link set eth1 address 00:00:00:00:00:ff
+ip address add 10.0.0.1/24 dev eth1
+ip link set eth2 address 00:00:00:00:00:aa
+ip address add 192.168.1.1/24 dev eth2
+iptables -t nat -A POSTROUTING -o eth2 -p UDP -j MASQUERADE --to-ports 7000-7001
+iptables -t filter -P FORWARD ACCEPT
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
