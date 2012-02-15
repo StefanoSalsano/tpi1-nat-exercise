@@ -1,1 +1,89 @@
-Questo è il README file per l'esercizio sul NAT del corso TPI1
+####################################################
+             GUIDA ALL'INSTALLAZIONE DI GIT
+####################################################
+
+----------------------------------------------------
+UTENTI WINDOWS (testato su XP SP3 e 7 Home Pro)
+Luca Marcheggiani
+----------------------------------------------------
+
+0) Creare un account su GITHUB https://github.com/signup/free
+
+1) Prevelare il setup di Git (Windows)
+
+http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.9-preview20120201.exe&can=2&q=
+
+2) Installate il programma (per utenti a 64 bit, la cartella di installazione sarà C:\Program Files (x86)\)
+
+3) Avviate Git Bash (se non avete modificato le preferenze, sarà sul Desktop e nell'avvio veloce)
+
+4) Dalla console che appare, eseguire il seguente comando per creare una chiave pubblica bash
+
+ssh-keygen -t -rsa -C "indirizzo@email.com"
+(virgolette incluse)
+ATTENZIONE: L'INDIRIZZO EMAIL DEVE COINCIDERE CON QUELLO SCELTO IN FASE DI REGISTRAZIONE AL SERVIZIO GITHUB
+
+Alcune righe di codice, confermeranno l'esecuzione corretta del comando e chiederanno conferma del path locale dove verrà creato il file id_rsa contenente la chiave RSA pubblica
+(in Windows 7 la directory .ssh è presente all'interno della cartella utente, in Windows XP è reperibile in C:\Documents and Settings\"Nome Utente" ----> NON IN DOCUMENTI!)
+
+
+5) Scegliere una password propria (chiave privata) e inserirla due volte nella console
+
+6) Altre righe confermeranno l'effettiva creazione della chiave pubblica RSA e dei due file id_rsa.pub e id_rsa (quest'ultimo senza estensione)
+
+7) Nel pannello di controllo utente di GitHub (https://github.com/settings/profile), selezionare SSH Keys e poi Add New SSH Key
+
+8) Incollare la chiave aprendo il file id_rsa.pub con un editor di testo (consiglio Word o Wordpad invece del Notepad)
+ATTENZIONE! MICROSOFT PUBLISHER (presente nei pacchetti Office) RICONOSCE LE ESTENSIONI .PUB
+(IGNORARE L'APERTURA CONSIGLIATA CON PUBLISHER)
+
+9) Testare il funzionamento da console, eseguendo il comando:
+ssh -T git@github.com
+
+Confermare la connessione digitando yes (NON FATE I PIGRI CHE LA SOLA "y" NON FUNZIONA!)
+
+Se tutto procede per il meglio (vi sarà chiesta la vostra chiave privata, o password), anche con il Firewall di Windows attivo, vi dovrebbe apparire questo messaggio di conferma con l'user associato all'indirizzo email scelto al momento della registrazione.
+
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+
+10) Per aiutare GIT a tenere traccia di tutte le modifiche (commit) dei progetti, bisogna completare la procedura con Nome e Cognome e indirizzo email
+
+git config --global user.name "Nome Cognome"
+
+e poi
+
+git config --global user.email "indirizzo@email.com"
+(virgolette incluse)
+
+In entrambi i casi non riceverete alcun messaggio di conferma.
+
+11) Per "clonare" in locale l'esercizio NAT di TPI 2011/2012, bisogna selezionare Fork da questo link:
+https://github.com/StefanoSalsano/tpi1-nat-exercise
+(in alto a destra)
+
+GitHub eseguirà alcune operazioni online, cui farà seguito l'incremento del numero di Fork in alto a destra.
+
+Ma questo solo sul web!
+
+12) Per importare sul proprio PC un progetto eseguire il comando
+
+git clone git@github.com:USERNAME/tpi1-nat-exercise.git
+
+Vi sarà chiesta la vostra password privata e il download sarà completato.
+
+13) Sarà creata una cartella locale nella directory User (Windows 7) e C:\Documents And Settings\UTENTE (Windows XP)
+
+14) Bisogna configurare remote e upstream all'interno della cartella locale per consentirvi di modificare/pubblicare (push) e scaricare/richiedere (pull) eventuali aggiornamenti
+
+Dalla console
+cd tpi1-nat-exercise
+git remote add upstream git://github.com/StefanoSalsano/tpi1-nat-exercise.git
+git fetch upstream
+
+....) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, POSSIAMO ESEGUIRE UNA PUSH (upload degli aggiornamenti)
+
+git push origin master
+----------------------------------------------------
+UTENTI LINUX (testato su Ubuntu v. ???? )
+Marco Galvagno & Domenico D'Ambrosio
+----------------------------------------------------
