@@ -80,7 +80,12 @@ cd tpi1-nat-exercise
 git remote add upstream git://github.com/StefanoSalsano/tpi1-nat-exercise.git
 git fetch upstream
 
-....) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, POSSIAMO ESEGUIRE UNA PUSH (upload degli aggiornamenti)
+....) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, SEGNALIAMO I FILE MODIFICATI
+
+git add README
+git commit -m 'first commit'
+
+POSSIAMO ESEGUIRE UNA PUSH (upload degli aggiornamenti)
 
 git push origin master
 ----------------------------------------------------
