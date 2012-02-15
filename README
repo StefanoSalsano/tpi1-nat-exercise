@@ -57,19 +57,27 @@ git config --global user.email "indirizzo@email.com"
 
 In entrambi i casi non riceverete alcun messaggio di conferma.
 
-11) Per importare sul proprio PC un progetto eseguire il comando
+11) Occorre creare un "doppione" dell'esercizio sul proprio profilo online:
+da loggati, cliccare su Fork in alto a destra qui
+
+https://github.com/StefanoSalsano/tpi1-nat-exercise
+
+e attendere la creazione di un Fork dell'esercizio (collegamento sul proprio spazio GIT)
+ECCO IL MIO COME ESEMPIO
+https://github.com/djluca84/tpi1-nat-exercise
+
+12) Per importare materialmente sul proprio PC un progetto eseguire il comando
 
 git clone git@github.com:StefanoSalsano/tpi1-nat-exercise.git
 
 Vi sarà chiesta la vostra password privata e il download sarà completato.
-
-12) Sarà creata una cartella locale nella directory User (Windows 7) e C:\Documents And Settings\UTENTE (Windows XP)
+Sarà creata una cartella locale nella directory User (Windows 7) e C:\Documents And Settings\UTENTE (Windows XP)
 
 13) Bisogna configurare remote e upstream all'interno della cartella locale per consentirvi di modificare/pubblicare (push) e scaricare/richiedere (pull) eventuali aggiornamenti
 
 Dalla console
 cd tpi1-nat-exercise
-git remote add origin git://github.com/StefanoSalsano/tpi1-nat-exercise.git
+git remote add origin git://github.com/UTENTE/tpi1-nat-exercise.git
 git fetch origin
 
 14) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, SEGNALIAMO I FILE MODIFICATI
@@ -80,6 +88,10 @@ git commit -m 'first commit'
 POSSIAMO ESEGUIRE UNA PUSH (upload degli aggiornamenti)
 
 git push origin master
+
+15) ULTIMO PASSAGGIO, BISOGNA "PROPORRE" LE MODIFICHE OPPORTUNE AL PROFILO DI STEFANO SALSANO, TRAMITE UN PULL REQUEST (in alto a destra sul proprio profilo GIT)
+
+
 ----------------------------------------------------
 UTENTI LINUX (testato su Ubuntu v. ???? )
 Marco Galvagno & Domenico D'Ambrosio
