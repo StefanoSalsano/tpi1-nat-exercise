@@ -1,1 +1,98 @@
-Questo è il README file per l'esercizio sul NAT del corso TPI1
+####################################################
+             GUIDA ALL'INSTALLAZIONE DI GIT
+####################################################
+
+----------------------------------------------------
+UTENTI WINDOWS (testato su XP SP3 e 7 Home Pro)
+Luca Marcheggiani
+----------------------------------------------------
+
+0) Creare un account su GITHUB https://github.com/signup/free
+
+1) Prevelare il setup di Git (Windows)
+
+http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.9-preview20120201.exe&can=2&q=
+
+2) Installate il programma (per utenti a 64 bit, la cartella di installazione sarà C:\Program Files (x86)\)
+
+3) Avviate Git Bash (se non avete modificato le preferenze, sarà sul Desktop e nell'avvio veloce)
+
+4) Dalla console che appare, eseguire il seguente comando per creare una chiave pubblica bash
+
+ssh-keygen -t -rsa -C "indirizzo@email.com"
+(virgolette incluse)
+ATTENZIONE: L'INDIRIZZO EMAIL DEVE COINCIDERE CON QUELLO SCELTO IN FASE DI REGISTRAZIONE AL SERVIZIO GITHUB
+
+Alcune righe di codice, confermeranno l'esecuzione corretta del comando e chiederanno conferma del path locale dove verrà creato il file id_rsa contenente la chiave RSA pubblica
+(in Windows 7 la directory .ssh è presente all'interno della cartella utente, in Windows XP è reperibile in C:\Documents and Settings\"Nome Utente" ----> NON IN DOCUMENTI!)
+
+
+5) Scegliere una password propria (chiave privata) e inserirla due volte nella console
+
+6) Altre righe confermeranno l'effettiva creazione della chiave pubblica RSA e dei due file id_rsa.pub e id_rsa (quest'ultimo senza estensione)
+
+7) Nel pannello di controllo utente di GitHub (https://github.com/settings/profile), selezionare SSH Keys e poi Add New SSH Key
+
+8) Incollare la chiave aprendo il file id_rsa.pub con un editor di testo (consiglio Word o Wordpad invece del Notepad)
+ATTENZIONE! MICROSOFT PUBLISHER (presente nei pacchetti Office) RICONOSCE LE ESTENSIONI .PUB
+(IGNORARE L'APERTURA CONSIGLIATA CON PUBLISHER)
+
+9) Testare il funzionamento da console, eseguendo il comando:
+ssh -T git@github.com
+
+Confermare la connessione digitando yes (NON FATE I PIGRI CHE LA SOLA "y" NON FUNZIONA!)
+
+Se tutto procede per il meglio (vi sarà chiesta la vostra chiave privata, o password), anche con il Firewall di Windows attivo, vi dovrebbe apparire questo messaggio di conferma con l'user associato all'indirizzo email scelto al momento della registrazione.
+
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+
+10) Per aiutare GIT a tenere traccia di tutte le modifiche (commit) dei progetti, bisogna completare la procedura con Nome e Cognome e indirizzo email
+
+git config --global user.name "Nome Cognome"
+
+e poi
+
+git config --global user.email "indirizzo@email.com"
+(virgolette incluse)
+
+In entrambi i casi non riceverete alcun messaggio di conferma.
+
+11) Occorre creare un "doppione" dell'esercizio sul proprio profilo online:
+da loggati, cliccare su Fork in alto a destra qui
+
+https://github.com/StefanoSalsano/tpi1-nat-exercise
+
+e attendere la creazione di un Fork dell'esercizio (collegamento sul proprio spazio GIT)
+ECCO IL MIO COME ESEMPIO
+https://github.com/djluca84/tpi1-nat-exercise
+
+12) Per importare materialmente sul proprio PC un progetto eseguire il comando
+
+git clone git@github.com:StefanoSalsano/tpi1-nat-exercise.git
+
+Vi sarà chiesta la vostra password privata e il download sarà completato.
+Sarà creata una cartella locale nella directory User (Windows 7) e C:\Documents And Settings\UTENTE (Windows XP)
+
+13) Bisogna configurare remote e upstream all'interno della cartella locale per consentirvi di modificare/pubblicare (push) e scaricare/richiedere (pull) eventuali aggiornamenti
+
+Dalla console
+cd tpi1-nat-exercise
+git remote add origin git://github.com/UTENTE/tpi1-nat-exercise.git
+git fetch origin
+
+14) UNA VOLTA ESEGUITE LE MODIFICHE LOCALI, SEGNALIAMO I FILE MODIFICATI
+
+git add README
+git commit -m 'first commit'
+
+POSSIAMO ESEGUIRE UNA PUSH (upload degli aggiornamenti)
+
+git push origin master
+
+15) ULTIMO PASSAGGIO, BISOGNA "PROPORRE" LE MODIFICHE OPPORTUNE AL PROFILO DI STEFANO SALSANO, TRAMITE UN PULL REQUEST (in alto a destra sul proprio profilo GIT)
+
+
+----------------------------------------------------
+UTENTI LINUX (testato su Ubuntu v. ???? )
+Marco Galvagno & Domenico D'Ambrosio
+----------------------------------------------------
