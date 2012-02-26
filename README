@@ -96,3 +96,21 @@ git push origin master
 UTENTI LINUX (testato su Ubuntu v. ???? )
 Marco Galvagno & Domenico D'Ambrosio
 ----------------------------------------------------
+
+
+###############################################################
+             GUIDA ALL'ESECUZIONE DEGLI ESERCIZI SU NETKIT
+###############################################################
+
+----------------------------------------------------
+Simone Cellini
+----------------------------------------------------
+
+1) Dopo aver effettuato il clone per la copia locale del progetto, spostare il contenuto dello stesso in un supporto rimovibile
+	(o comunque in modo da potervi accedere su Netkit)
+
+2) Avviare quindi Netkit nelle modalità esposte a lezione (con macchina virtuale o tramite cd-live)
+
+3) Copiare il progetto clonato sul desktop di Netkit
+
+4) Per ogni esercizio, leggere i relativi README.
