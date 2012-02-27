@@ -1,0 +1,60 @@
+####################################################
+		ESECUZIONE ESERCIZIO NAT-C
+####################################################
+
+----------------------------------------------------
+Simone Cellini
+----------------------------------------------------
+
+1) Aprire il terminale
+
+2) Posizionarsi nella cartella dell'esercizio
+	Es cd /home/knoppix/Desktop/nat-c
+
+3) Eseguire il laboratorio con il comando 
+	lstart
+   Si apriranno così il client, nat e il server 
+
+4) Per ciascuna macchina virtuale linux aperta (client, nat e server),
+   eseguire lo script shell start.sh con il comando
+	./start.sh
+   Questi avvierà tcpdump e specificherà un file di uscita del tipo
+   client.pcap o nat.pcap o server.pcap, salvato nella directory
+   dell'esercizio
+
+5) Operando sul server, avviare uno degli esercizi svilupppati, ad es. es_nat
+   Andare quindi nella console del server ed eseguire il comando
+	cd es_nat*
+
+6) Avviare quindi l'eseguibile al suo interno con
+	./server
+
+7) Operando sul client, avviare lo stesso esercizio del server
+   Andare quindi sulla console del client ed eseguire
+	cd es_nat**
+
+8) Avviare quindi l'eseguibile al suo interno con
+	./client 10.0.1.101**
+
+9) Avverrà uno scambio di pacchetti client->server: echo-request->echo-reply e altre interazione sviluppate negli esercizi.
+
+10) Terminare le varie operazione in sospeso nelle console con CTRL+C (Es. l'attesa di pacchetti del server)
+
+11) Eseguire lo script shell stop.sh con il comando
+	./stop.sh 
+    per interrompere tcpdump
+
+12) Nella console "principale", eseguire
+	lcrash
+    per interrompere le macchine virtuali.
+
+13) Sempre nella console principale, eseguire il comando
+	wireshark client.pcap
+    per analizzare il traffico del client
+
+14) Ripetere il passo 13 per il server e nat
+	wireshark nat.pcap  
+	wireshark nat.pcap
+
+* per altri esercizi potrebbe essere cd es_nat_porta e cd es_nat_attesa
+** 10.0.1.101 è l'indirizzo del server assegnato da server.startup   
