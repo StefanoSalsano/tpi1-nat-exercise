@@ -158,7 +158,7 @@ Per fare in modo che Git tracci i cambiamenti avvenuti sui file bisogna aggiunge
 
 Per confermare le modifiche effettuate:
 	13)Digitare da terminale:
-		git commit
+		git commit -m Committed
 ###############################################################
              GUIDA ALL'ESECUZIONE DEGLI ESERCIZI SU NETKIT
 ###############################################################
