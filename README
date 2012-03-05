@@ -159,6 +159,15 @@ Per fare in modo che Git tracci i cambiamenti avvenuti sui file bisogna aggiunge
 Per confermare le modifiche effettuate:
 	13)Digitare da terminale:
 		git commit -m Committed
+
+
+Bisogna ora propagare le modifiche alla copia remota del proprio progetto e inviare una proporre le nuove modifiche al professore.
+
+	14)Digitare da terminale:
+		git push origin master
+	15)Effettuare una Pull Request sul profilo del professore su GitHub.com
+
+
 ###############################################################
              GUIDA ALL'ESECUZIONE DEGLI ESERCIZI SU NETKIT
 ###############################################################
