@@ -19,7 +19,7 @@ http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.9-preview20120201
 
 4) Dalla console che appare, eseguire il seguente comando per creare una chiave pubblica bash
 
-ssh-keygen -t -rsa -C "indirizzo@email.com"
+ssh-keygen -t rsa -C "indirizzo@email.com"
 (virgolette incluse)
 ATTENZIONE: L'INDIRIZZO EMAIL DEVE COINCIDERE CON QUELLO SCELTO IN FASE DI REGISTRAZIONE AL SERVIZIO GITHUB
 
@@ -93,11 +93,72 @@ git push origin master
 
 
 ----------------------------------------------------
-UTENTI LINUX (testato su Ubuntu v. ???? )
+UTENTI LINUX (testato su Ubuntu v. 10.10 )
 Marco Galvagno & Domenico D'Ambrosio
 ----------------------------------------------------
 
+Per utilizzare il sistema occorre prima di tutto insallare Git su Ubuntu 10.10 e creare un account sul sito GitHub.com
 
+Per installare Git sul sitema operativo:
+
+	1)Sul terminale digitare: apt-get install git-core
+	2)Creare l'account su GitHub.com inserendo UserName, Password e una mail di riferimento.
+
+Per consentire il funzionamento di Git con GitHub bisogna creare una coppia di chiavi privata/pubblica per utilizzare la comunicazione SSH:
+
+	3)Digitare sul terminale: ssh-keygen -t rsa -C "youremail"
+	(sostituire youremail con l'email di riferimento utilizzata in fase di registrazione e ricordare la passphrase di cui viene richiesto 		l'inserimento)
+	
+	4)Effettuare il login su GitHub con il proprio UserName e Password e aggiungere una nuova chiave SSH
+
+			4.1)Click su Account Settings -> SSH Keys ->Add New Public Key sul pannello di GitHub.
+			4.2)Aprire con un editor di testo il file id_rsa.pub creato al passo 3.
+			4.3)Copiare il contenuto nel campo key della finestra di GitHub.
+			4.4)Click su Add Key.
+
+Per testare la configurazione:
+	6)Digitare sul terminale: ssh -T git@github.com (quando rischiesto dal sistema operativo digitare la passphrase stabilita precedentemente)
+
+Per configurare le proprie informazioni:
+	7)Digitare sul terminale:
+		git config --global user.name "Firstname Lastname" 
+		git config --global user.email "your_email@youremail.com" (inserire la email con cui si è effettuata la registrazione)
+
+Per permettere a tool esterni di operare con Git/GitHub bisogna configurare l'API token:
+
+	8)Da loggati, click su Account Settings ->  Account Settings sul pannello di GitHub.com
+	Sul terminale digitare:
+		git config --global github.user username
+		git config --global github.token yourToken
+		(sostituendo a username quello scelto in fase di registrazione e a yourtoken quello individuato sul pannello Account Settings)
+
+Per poter contribuire al progetto tpi1-nat-exercise bisogna creare su GitHub una propria copia:
+	8)Da loggati, alla pagina relativa al progetto del professore effettuare il fork del progetto cliccando sul tasto "Fork"
+
+Una volta effettuato il fork esistera una propria copia remota del progetto (su GitHub.com). Per poter effettuare modifiche bisogna creare una copia locale.
+	9)Creare una copia locale del progetto forkato con:
+		git clone git@github.com:username/tpi1-nat-exercise.git
+		(sostituendo username con il proprio)
+
+A questo punto disponiamo di una copia remota e di una copia locale del progetto. Le modifiche locali verranno successivamente propagate alla copia remota, ma non a quella originale da cui è stato effettuato il fork. In generale per tenere traccia dei cambiamenti della copia originale bisogna creare un collegamento al progetto originale
+
+	10)Bisongna creare un oggetto remoto per tenere traccia dei cambiamenti sul progetto originale.
+		cd tpi1-nat-exercise (oppure la cartella dove è stato clonato il progetto)
+		git remote add upstream git://github.com/StefanoSalsano/tpi1-nat-exercise.git
+		git fetch upstream
+
+
+11)Procedere alla modifica dei file
+
+Per fare in modo che Git tracci i cambiamenti avvenuti sui file bisogna aggiungerli alla sua lista.
+
+	12)Digitare da terminale:
+		git add README (README è solo di esempio)
+		(se non si facesse "git add" tutte le modifiche effettuate non verrebbero incluse nel commit finale)
+
+Per confermare le modifiche effettuate:
+	13)Digitare da terminale:
+		git commit
 ###############################################################
              GUIDA ALL'ESECUZIONE DEGLI ESERCIZI SU NETKIT
 ###############################################################
